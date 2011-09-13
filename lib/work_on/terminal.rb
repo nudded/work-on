@@ -87,7 +87,7 @@ module WorkOn
     end
 
     def execute(cmd)
-      selected_window.execute(cmd)
+      selected_tab.execute(cmd)
     end
 
   end
