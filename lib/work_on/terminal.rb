@@ -45,10 +45,6 @@ module WorkOn
         not_implemented
       end
 
-      def selected=(bool)
-        not_implemented
-      end
-
       def execute(cmd)
         not_implemented
       end
