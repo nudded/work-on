@@ -8,8 +8,29 @@ module WorkOn
     include Appscript
 
     def initialize
-      @terminal = app("Terminal.app")
+      @appscript = app("Terminal.app")
       @process  = app("System Events").application_processes['Terminal']
+    end
+
+    def windows
+      @appscript.windows.get.map! do |window|
+        # it seems this returns far too many windows (some of them don't even exist)
+        # so we check a property which will error when something is wrong
+        begin
+          window.selected.get
+          MacWindow.new self, @process, window
+        rescue
+          nil
+        end
+      end.compact! # don't forget to remove the nil values
+    end
+
+    def new_window
+      prev = selected_window
+      @process.keystroke('n', :using => :command_down)
+      window = MacWindow.new(self, @process, @appscript.windows.first.get)
+      prev.select!
+      window
     end
 
     class MacTab < Tab
@@ -23,7 +44,7 @@ module WorkOn
       end
 
       def execute(cmd)
-        app("Terminal.app").do_script(cmd, :in => @appscript)
+        Appscript.app("Terminal.app").do_script(cmd, :in => @appscript)
       end
 
     end
@@ -48,11 +69,16 @@ module WorkOn
         @appscript.frontmost.set(true)
       end
 
+      def tabs
+        @appscript.tabs.get.map {|tab| MacTab.new @terminal, tab }
+      end
+
       def new_tab
         prev = @terminal.selected_window
         self.select!
         @process.keystroke('t', :using => :command_down)
         prev.select!
+        self.tabs.last
       end
 
       def to_s
@@ -60,26 +86,6 @@ module WorkOn
       end
     end
 
-    def windows
-      @terminal.windows.get.map! do |window|
-        # it seems this returns far too many windows (some of them don't even exist)
-        # so we check a property which will error when something is wrong
-        begin
-          window.selected.get
-          MacWindow.new self, @process, window
-        rescue
-          nil
-        end
-      end.compact! # don't forget to remove the nil values
-    end
-
-    def new_window
-      prev = selected_window
-      @process.keystroke('n', :using => :command_down)
-      window = MacWindow.new(self, @process, @terminal.windows.first.get)
-      prev.select!
-      window
-    end
 
   end
 end
