@@ -37,8 +37,8 @@ context "Window" do
     [window1, window2]
   end
 
-  should("have 2 tabs") { topic.first.tabs }.size(2)
-  should("have 2 tabs") { topic.last.tabs }.size(2)
+  asserts("tabs") { topic.first.tabs }.size(2)
+  asserts("tabs") { topic.last.tabs }.size(2)
 
 
 end
