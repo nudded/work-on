@@ -28,7 +28,7 @@ module WorkOn
     def new_window
       prev = selected_window
       @process.keystroke('n', :using => :command_down)
-      window = MacWindow.new(self, @process, @appscript.windows.first.get)
+      window = selected_window
       prev.select!
       window
     end
@@ -56,7 +56,7 @@ module WorkOn
       end
 
       def selected?
-        @appscript.selected.get
+        @appscript.frontmost.get
       end
 
       # Selects this window

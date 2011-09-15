@@ -25,3 +25,20 @@ context "Terminal" do
   end
 
 end
+
+context "Window" do
+  setup { WorkOn::Terminal.instance }
+
+  setup do
+    window1 = topic.new_window
+    window1.new_tab
+    window2 = topic.new_window
+    window2.new_tab
+    [window1, window2]
+  end
+
+  should("have 2 tabs") { topic.first.tabs }.size(2)
+  should("have 2 tabs") { topic.last.tabs }.size(2)
+
+
+end
