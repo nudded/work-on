@@ -40,5 +40,4 @@ context "Window" do
   asserts("tabs") { topic.first.tabs }.size(2)
   asserts("tabs") { topic.last.tabs }.size(2)
 
-
 end

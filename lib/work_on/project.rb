@@ -11,6 +11,13 @@ module WorkOn
 
     # Start working on this project
     def work!
+      initialize_windows
+    end
+
+    private
+
+    # Sets up the terminal according the config file
+    def initialize_windows
       windows = @config.select {|k,v| /window/ === k }
       # if there is no window specified, i will assume the users wants to open the tabs in the current
       # terminal window
@@ -18,13 +25,11 @@ module WorkOn
         tabs = @config.select {|k,v| /tab/ === k }
         create_tabs(@terminal.selected_window, tabs, false)
       else
-        windows.each do |window, tabs|
-          create_window(tabs)
+        windows.each do |window, tabs_hash|
+          create_window(tabs_hash)
         end
       end
     end
-
-    private
 
     # Create a new window with the commands defined in tabs
     def create_window(tabs)
