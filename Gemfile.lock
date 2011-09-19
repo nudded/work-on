@@ -26,3 +26,4 @@ DEPENDENCIES
   rcov
   rdoc
   riot
+  rr
