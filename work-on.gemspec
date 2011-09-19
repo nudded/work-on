@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -34,7 +35,8 @@ Gem::Specification.new do |s|
     "test/core/config_test.rb",
     "test/core/project_test.rb",
     "test/core/terminal_test.rb",
-    "test/teststrap.rb"
+    "test/teststrap.rb",
+    "work-on.gemspec"
   ]
   s.homepage = %q{http://github.com/nudded/work-on}
   s.licenses = [%q{MIT}]
