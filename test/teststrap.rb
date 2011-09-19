@@ -1,4 +1,4 @@
 require 'riot'
 require 'riot/rr'
-require 'work_on'
+require 'work-on'
 Riot.verbose
