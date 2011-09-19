@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'work-on'
+
+WorkOn::Cli.start
