@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "work-on"
   gem.homepage = "http://github.com/nudded/work-on"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Commandline Terminal Automation}
+  gem.description = %Q{utility to manage projects and the terminal windows you open when you work on them.}
   gem.email = "willemstoon@gmail.com"
   gem.authors = ["Toon Willems"]
   # dependencies defined in Gemfile
@@ -34,16 +34,16 @@ end
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.libs << 'test' << 'lib'
+  test.pattern = 'test/**/*_test.rb'
   test.verbose = true
   test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
