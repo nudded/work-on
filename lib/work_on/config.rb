@@ -5,7 +5,7 @@ module WorkOn
   class Config
 
     def self.default
-      @default ||= Config.new '~/.config/work_on'
+      @default ||= Config.new(File.expand_path '~/.config/work_on')
     end
 
     attr_reader :file_name
