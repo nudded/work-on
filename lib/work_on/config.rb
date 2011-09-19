@@ -17,7 +17,7 @@ module WorkOn
 
     def [](project)
       config = @hash[project]
-      raise "No config found for that project" unless config
+      raise ArgumentError, "No config found for that project" unless config
       Project.new project, config
     end
 

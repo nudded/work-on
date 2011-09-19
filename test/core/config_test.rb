@@ -12,6 +12,8 @@ context "Config" do
   denies(:[], 'test').nil
   asserts_topic.assigns(:file_name)
 
+  asserts(:[], 'blah').raises(ArgumentError)
+
   context "with small test project" do
     setup { topic['test'] }
     asserts_topic.assigns(:project_dir, 'test-dir')
