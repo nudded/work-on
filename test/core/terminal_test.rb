@@ -37,7 +37,7 @@ context "Window" do
     [window1, window2]
   end
 
-  asserts("tabs") { topic.first.tabs }.size(2)
-  asserts("tabs") { topic.last.tabs }.size(2)
+  asserts("tabs of first window") { topic.first.tabs }.size(2)
+  asserts("tabs of second window") { topic.last.tabs }.size(2)
 
 end
