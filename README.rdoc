@@ -1,18 +1,39 @@
 = work-on
 
-Description goes here.
+A utility to manage your projects and make working on them as seemless as possible.
+Basically you edit a small yaml file where you specify your project directory and the terminal windows and tabs
+you want to open.
 
-== Contributing to work-on
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+= Example
 
-== Copyright
+this is the actual config file i use for work-on:
+
+  work-on:
+    project-dir: ~/Projects/work-on
+    tab1:
+      - git status
+    tab2:
+      - mvim
+
+this opens 2 new tabs and executes above commands
+you can also open new windows
+
+  work-on:
+    project-dir: ~/Projects/work-on
+    window1:
+      tab1:
+        - ls
+      tab2:
+        - git status
+    window2:
+      tab1:
+        - mvim
+
+You can guess what the above would do.
+
+NOTE: At the moment only Mac OS X is supported, but support for linux is coming real soon.
+
+= Copyright
 
 Copyright (c) 2011 Toon Willems. See LICENSE.txt for
 further details.
