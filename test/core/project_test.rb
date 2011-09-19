@@ -15,7 +15,6 @@ context "Project" do
     topic.work!
   end
 
-
   asserts_topic.assigns(:project_dir, '~/test')
 
 end
