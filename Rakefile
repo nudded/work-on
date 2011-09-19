@@ -21,6 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{utility to manage projects and the terminal windows you open when you work on them.}
   gem.email = "willemstoon@gmail.com"
   gem.authors = ["Toon Willems"]
+  gem.executables = ['work-on']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
