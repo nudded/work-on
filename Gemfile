@@ -15,4 +15,5 @@ group :development do
   gem "rcov"
   gem "rdoc"
   gem "rr"
+  gem "fakefs"
 end
