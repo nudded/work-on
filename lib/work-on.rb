@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(File.join(Dir.pwd, 'lib', 'work_on'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'work_on'))
 require 'terminal'
 require 'terminals/mac_terminal'
 require 'config'
