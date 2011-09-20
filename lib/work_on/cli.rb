@@ -5,7 +5,7 @@ module WorkOn
 
     desc "start PROJECT", "start working on the given project"
     def start(project_name)
-      Config.default[project_name].work!
+      Project.new(Config.new(project_name)).work!
     end
 
     # use method_missing to start the project
