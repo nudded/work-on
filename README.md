@@ -8,7 +8,7 @@ you want to open.
 Example
 -------
 
-Config files should be placed inside ~/.config/work-on/
+Config files should be placed inside ~/.config/work-on/.
 Yaml files should end in .yaml or .yml
 
 this is the actual config file i use for work-on:
