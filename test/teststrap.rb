@@ -1,6 +1,10 @@
 require 'riot'
 require 'riot/rr'
 require 'fakefs/safe'
+
+require 'simplecov'
+SimpleCov.start
+
 require 'work-on'
 
 FakeFS do

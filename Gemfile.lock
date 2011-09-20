@@ -8,13 +8,18 @@ GEM
       bundler (~> 1.0)
       git (>= 1.2.5)
       rake
+    multi_json (1.0.3)
     rake (0.9.2)
     rb-appscript (0.6.1)
-    rcov (0.9.10)
     rdoc (3.9.4)
     riot (0.12.5)
       rr
     rr (1.0.4)
+    simplecov (0.5.3)
+      multi_json (~> 1.0.3)
+      simplecov-html (~> 0.5.3)
+    simplecov-html (0.5.3)
+    thor (0.14.6)
 
 PLATFORMS
   ruby
@@ -25,7 +30,8 @@ DEPENDENCIES
   fakefs
   jeweler (~> 1.6.4)
   rb-appscript
-  rcov
   rdoc
   riot
   rr
+  simplecov
+  thor

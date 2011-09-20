@@ -5,6 +5,7 @@ source "http://rubygems.org"
 
 gem 'abstract'
 gem 'rb-appscript'
+gem 'thor'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
@@ -12,7 +13,7 @@ group :development do
   gem "riot", ">= 0"
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.6.4"
-  gem "rcov"
+  gem "simplecov"
   gem "rdoc"
   gem "rr"
   gem "fakefs"
