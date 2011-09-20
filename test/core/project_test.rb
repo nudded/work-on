@@ -1,12 +1,17 @@
+require 'yaml'
+
 context "Project" do
-  helper(:config_hash) do
-    {'project-dir' => '~/test',
-     'tab1' => [],
-     'tab2' => []
-    }
+  helper(:config) do
+    mock(YAML).load_file('test.yml') do
+      {'project-dir' => '~/test',
+       'tab1' => [],
+       'tab2' => []
+      }
+    end
+    WorkOn::YAMLConfig.new('test.yml')
   end
 
-  setup { WorkOn::Project.new 'test', config_hash }
+  setup { WorkOn::Project.new config }
 
   hookup do
     terminal = stub(WorkOn::Terminal.instance)
@@ -15,6 +20,6 @@ context "Project" do
     topic.work!
   end
 
-  asserts_topic.assigns(:project_dir, '~/test')
+  asserts(:project_dir).equals(Dir.home + '/test')
 
 end
