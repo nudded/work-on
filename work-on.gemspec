@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{work-on}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Toon Willems}]
@@ -15,14 +15,14 @@ Gem::Specification.new do |s|
   s.executables = [%q{work-on}]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
     "bin/work-on",
@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "test/core/config_test.rb",
     "test/core/project_test.rb",
     "test/core/terminal_test.rb",
+    "test/core/yaml_config_test.rb",
     "test/teststrap.rb",
     "work-on.gemspec"
   ]
@@ -56,6 +57,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<rr>, [">= 0"])
+      s.add_development_dependency(%q<fakefs>, [">= 0"])
     else
       s.add_dependency(%q<abstract>, [">= 0"])
       s.add_dependency(%q<rb-appscript>, [">= 0"])
@@ -65,6 +67,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<rr>, [">= 0"])
+      s.add_dependency(%q<fakefs>, [">= 0"])
     end
   else
     s.add_dependency(%q<abstract>, [">= 0"])
@@ -75,6 +78,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<rr>, [">= 0"])
+    s.add_dependency(%q<fakefs>, [">= 0"])
   end
 end
 
